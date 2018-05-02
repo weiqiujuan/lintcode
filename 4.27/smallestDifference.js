@@ -1,12 +1,12 @@
 const smallestDifference = function (A, B) {
 
-    let small=5;//初始化最小数;
+    let small = 5;//初始化最小数;
     for (let i = 0; i < A.length; i++) {
         for (let j = 0; j < B.length; j++) {
 
             let diff = Math.abs(A[i] - B[j]);
             if (diff < small) {
-                 small = diff;
+                small = diff;
             }
         }
     }
