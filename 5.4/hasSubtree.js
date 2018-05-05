@@ -20,8 +20,8 @@ function HasSubtree(pRoot1, pRoot2) {
     function judge(root1, root2) {
         if (root1 === null) return false;
         if (root2 === null) return false;
-        if (root1.val !== root2.val) return false;
-        return judge(root1.left, root2.left) && judge(root1.right, root2.right);
+        if (root1.val !== root2.val) return false;//根节点是否相同
+        return judge(root1.left, root2.left) && judge(root1.right, root2.right);//左右子节点是否相同
     }
 }
 
