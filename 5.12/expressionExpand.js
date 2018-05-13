@@ -5,8 +5,8 @@ const expressionExpand = function (str) {
     }
 
 
-    
+
 };
 
-let test=abc3[a];
+let test='abc3[a]';
 console.log(expressionExpand(test));
