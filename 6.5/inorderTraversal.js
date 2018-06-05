@@ -1,0 +1,30 @@
+class TreeNode {
+    constructor(val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+const inorderTraversal = (root) => {
+    if (root === null) {
+        return [];
+    }
+    let result = [];
+    let left = inorderTraversal(root.left);
+    let right = inorderTraversal(root.right);
+    result = result.concat(left);
+    result.push(root.val);
+    result = result.concat(right);
+    return result;
+};
+
+const test = () => {
+    let root;
+    root = new TreeNode(1);
+    root.right = new TreeNode(2);
+    root.right.left = new TreeNode(3);
+    console.log(inorderTraversal(root));
+};
+
+test();
