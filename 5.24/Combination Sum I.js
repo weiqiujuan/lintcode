@@ -30,6 +30,7 @@ const dfs = (candidates, startIndex, target, combination, result) => {
             break;
         }
 
+        //改变数组的索引，进行迭代
         if (i === 0 || candidates[i] !== candidates[i - 1] || i === startIndex) {
             combination.push(candidates[i]);
             dfs(candidates, i + 1, target - candidates[i], combination, result);
@@ -39,4 +40,4 @@ const dfs = (candidates, startIndex, target, combination, result) => {
 };
 
 let test = [2, 3, 6, 7];
-console.log(combinationSum([2, 3, 6, 7], 8));
+console.log(combinationSum([2, 3, 6, 7], 9));
