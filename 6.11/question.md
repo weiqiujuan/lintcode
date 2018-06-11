@@ -4,5 +4,5 @@
 
 <h3>样例</h3>
 给出二叉树 A={3,9,20,#,#,15,7}, B={3,#,20,15,7}
-<img src="img.png" alt="" width="100px" height="80px">
+<img src="./img.png" alt="" width="100px" height="80px">
 二叉树A是高度平衡的二叉树，但是B不是
