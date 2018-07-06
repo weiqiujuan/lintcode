@@ -1,42 +1,37 @@
 
-void ReplaceBlank(char string[],int length)
-{
+#include<iostream>
+using namespace std;
 
-    if(string===nullptr||length<=0)
-        return;
-
-    int originLength=0;
-    int numberOfBlank=0;
-    int i=0;
-
-    while(string[i]!='\0')
-    {
-        ++originLength;
-
-        if(string[i]===" ")
-        {
-            ++numberOfBlank;
-        }
-        ++i;
+void replaceBlank(char str[],int length){
+   if(str==NULL||length<=0) return;
+   int originLength=0;
+   int blankNum=0;
+   int i=0;
+   for(i=0;str[i]!='\0';i++){
+    originLength++;
+    if(str[i]==' '){
+        blankNum++;
     }
-    int ewLength=originLength+numberOfBlank*2;
-    if(newLength>length)
-        return;
+   }
+   int newLength=originLength+blankNum*2;
+   if(newLength>length) return;
 
-    int indexOfOriginal=originLength;
-    int indexOfNew=newLength;
-    while(indexOfOriginal>=0&&indexOfNew>indexOfOriginal)
-    {
-        if(string[indexOfOriginal]===" ")
-        {
-            string[indexOfNew--]='0';
-            string[indexOfNew--]='2';
-            string[indexOfNew--]='%';
-        }
-        else
-        {
-            string[indexOfNew--]=string[indexOfOriginal];
-        }
-        --indexOfOriginal;
+   while(originLength>=0&&newLength>originLength){
+    //当字符串没有空格时，就会出现ewLength=originLength的情况，从而减少复制操作
+    if(str[originLength]==' '){
+        str[newLength--]='0';
+        str[newLength--]='2';
+        str[newLength--]='%';
+    }else{
+        str[newLength--]=str[originLength];
     }
+    originLength--;
+   }
+   cout<<str<<endl;
+}
+
+int main(){
+const int length=100;
+char a[length]="hello world!";
+replaceBlank(a,length);
 }
