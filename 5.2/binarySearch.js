@@ -1,5 +1,4 @@
 function binarySearch(arr, target) {
-
     let start = 0;
     let end = arr.length - 1;
     if (!arr || target < arr[start] || target[end]) return -1;

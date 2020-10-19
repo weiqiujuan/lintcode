@@ -5,7 +5,7 @@ function levelOrder(arr) {
     let levelTotal = 1; //层的阶乘
     for (let i = 0; i < arr.length + 1; i++) {
         if (arr[i] === '#') {
-            arr[i] = undefined
+            arr[i] = null
         }
         if (i < levelTotal) {
             tempArr.push(arr[i])
